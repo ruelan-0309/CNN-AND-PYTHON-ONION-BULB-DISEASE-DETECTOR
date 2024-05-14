@@ -15,8 +15,6 @@ jobs:
         with:
           node-version: 20
 
-      # Add steps to build your Android app here
-      # For example:
       # - name: Set up JDK
       #   uses: actions/setup-java@v2
       #   with:
@@ -24,8 +22,6 @@ jobs:
       # - name: Build with Gradle
       #   run: ./gradlew build
 
-      # Add steps to package your Android app
-      # For example:
       # - name: Package Android App
       #   run: ./gradlew assembleRelease
 
@@ -34,5 +30,4 @@ jobs:
         with:
           name: build-output
           path: path/to/build/output
-Write to RESEARCH GROUP 3
 
