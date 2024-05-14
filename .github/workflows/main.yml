@@ -26,15 +26,14 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: python-artifacts
-          path: | C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
-
+          path: C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
 
       - name: Make package available for download
         uses: actions/upload-artifact@v2
         with:
           name: package
           path: |
-            main.py
-            utils.py
-            requirements.txt
+              main.py
+              utils.py
+              requirements.txt
           
