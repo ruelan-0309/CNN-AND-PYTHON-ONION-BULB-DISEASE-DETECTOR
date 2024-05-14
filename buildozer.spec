@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Disease Alert
+title = Write To Kivy
 
 # (str) Package name
-package.name = Disease_Alert
+package.name = KivyTest
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.YourName
 
 # (str) Source code where the main.py live
 source.dir = .
