@@ -25,8 +25,8 @@ jobs:
           echo "Build output saved as build-output.tar.gz"
           tar czvf build-output.tar.gz path/to/build/output
 
-      - name: Upload artifacts
+      - name: Upload build output directory
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: build-output.tar.gz
+          path: path/to/build/output
