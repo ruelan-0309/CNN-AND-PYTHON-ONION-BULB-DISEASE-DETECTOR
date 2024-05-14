@@ -26,6 +26,9 @@ jobs:
         with:
           name: python-artifacts
           path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
+      - name: Upload APK artifact uses: actions/upload-artifact@v2 
+        with: 
+          name: apk path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\bin\main-debug.apk
           
       - name: Make package available for download
         uses: actions/upload-artifact@v2
