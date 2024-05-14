@@ -1,4 +1,4 @@
- name: Build Android App
+name: Build and Package Python Web Application
 
 on:
   push:
@@ -12,30 +12,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          node-version: 20
 
-      # ... rest of the workflow ...
-
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11' # Choose the appropriate version
+          python-version: '3.11' # Changed 'x' to '11' for Python 3.11
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Package artifacts
         uses: actions/upload-artifact@v2
-        with:
-          name: python-artifacts
-          path: C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
-
-      - name: Make package available for download
-        uses: actions/upload-artifact@v2
-        with:
-          name: package
-          path:|
+        with: C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
+          name: python-web-app
+          path: |
             app/views.py
             app/__init__.py
             app/templates/
             app/static/
             requirements.txt
-            README.md 
+            README.md # Optional, if you want to include the README
