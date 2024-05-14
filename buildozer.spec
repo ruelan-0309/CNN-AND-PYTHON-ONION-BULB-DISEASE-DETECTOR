@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = DiseaseAlert
+title = Disease Alert
 
 # (str) Package name
-package.name = diseasealert
+package.name = disease_alert
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.novfensec
