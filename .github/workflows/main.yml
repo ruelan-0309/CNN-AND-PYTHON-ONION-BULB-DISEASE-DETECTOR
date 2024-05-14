@@ -26,7 +26,7 @@ jobs:
           tar czvf build-output.tar.gz path/to/build/output
 
       - name: Upload artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: package
-            path: ${{ steps.buildozer.outputs.filename }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: build-output.tar.gz
