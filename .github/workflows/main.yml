@@ -25,12 +25,12 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: python-artifacts
-          path: org.novfensec
+          path: path/to/org.novfensec
       - name: Make package available for download
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: |
+          path:path/to/
               main.py
               utils.py
               requirements.txt
