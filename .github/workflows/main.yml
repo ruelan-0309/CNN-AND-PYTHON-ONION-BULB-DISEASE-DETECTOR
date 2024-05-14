@@ -27,3 +27,8 @@ jobs:
           asset_name: python-artifacts.zip
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: python-artifacts.zip
+          asset_name: python-artifacts.zip
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
