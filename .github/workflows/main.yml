@@ -1,4 +1,4 @@
-name: Build and Upload Artifact
+name: Build Android App
 
 on:
   push:
@@ -10,17 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build and Test
-        run: |
-          # ... build and test code ...
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          node-version: 20
 
-          # Save build artifact
-          echo "Build artifact saved as myapp.zip"
-          zip -r myapp.zip myapp/
-          mv myapp.zip artifacts/
+      # ... rest of the workflow ...
 
-      - name: Upload Artifact
+      - name: Upload Build Output
         uses: actions/upload-artifact@v2
         with:
-          name: myapp
-          path: artifacts/myapp.zip
+          name: build-output
+          path: path/to/build/output
