@@ -15,18 +15,16 @@ jobs:
         with:
           node-version: 20
 
-      # ... rest of the workflow ...
-
       - name: Build Android App
         run: |
           # ... build commands ...
 
           # Save build output as artifact
           echo "Build output saved as build-output.tar.gz"
-          tar czvf build-output.tar.gz path/to/build/output
+          mv path/to/build/output build-output.tar.gz
 
       - name: Upload build output directory
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: path/to/build/output
+          path: build-output.tar.gz
