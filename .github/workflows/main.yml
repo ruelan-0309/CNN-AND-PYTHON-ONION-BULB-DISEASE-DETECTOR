@@ -32,7 +32,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: |
-            main.py
-            utils.py
+          path:|
+            app/views.py
+            app/__init__.py
+            app/templates/
+            app/static/
             requirements.txt
+            README.md 
