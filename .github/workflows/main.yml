@@ -23,7 +23,7 @@ jobs:
 
       - name: Package artifacts
         uses: actions/upload-artifact@v2
-        with: "C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py"
+        with: "C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app"
           name:python-web-app
           path:|
             app/views.py
