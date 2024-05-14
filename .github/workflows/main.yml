@@ -1,8 +1,5 @@
 [app]
 
-# (str) Title of your application
-title = Disease Alert
-
 # (str) Package name
 package.name = disease_alert
 
