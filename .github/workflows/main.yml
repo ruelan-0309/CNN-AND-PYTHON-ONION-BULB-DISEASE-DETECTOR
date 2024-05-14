@@ -29,5 +29,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-output
-          path: build-output.tar.gz
           path: path/to/build/output
