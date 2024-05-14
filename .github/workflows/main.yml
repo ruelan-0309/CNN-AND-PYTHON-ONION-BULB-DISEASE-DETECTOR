@@ -29,8 +29,14 @@ jobs:
           name: build-output
           path: build-output.tar.gz
 
+      - name: Download build output
+        uses: actions/download-artifact@v2
+        with:
+          name: build-output
+          path: path/to/download/output
+
       - name: Make package available for download
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: path/to/build/output
+          path: path/to/download/output
