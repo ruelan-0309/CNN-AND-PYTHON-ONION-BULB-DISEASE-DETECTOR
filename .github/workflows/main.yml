@@ -2,56 +2,28 @@ name: Disease Alert
 
 on:
   push:
-    branches: main
+    branches: main 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # ... rest of the workflow ...
 
-      - name: Install Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11' # Choose the appropriate version
-
-      - name: Upload Python artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: python-artifacts
-          path: main.py
-
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v2
-        with:
+      - name: Upload APK artifact uses: actions/upload-artifact@v2 
+        with: 
           name: apk
-          path: bin/main-debug.apk
+          path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\bin\main-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
 
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.run_id }}
-          release_name: Release ${{ github.run_id }}
-          body: |
-            This release includes the following files:
-
-            * Python artifacts
-            * APK file
-          draft: false
-          prerelease: false
-
-      - name: Upload APK to GitHub Release
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: bin/main-debug.apk
-          asset_name: main-debug.apk
-
-      - name: Upload Python artifacts to GitHub Release
-        uses: actions/upload-release-asset@v1
-        with:
+      - name: Upload Python artifacts to GitHub Release uses: actions/upload-release-asset@v1 with: 
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: python-artifacts.zip
           asset_name: python-artifacts.zip
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
