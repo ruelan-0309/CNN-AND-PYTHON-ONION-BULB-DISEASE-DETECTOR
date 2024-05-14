@@ -2,7 +2,7 @@ name: Disease Alert
 
 on:
   push:
-    branches: main 
+    branches: main
 
 jobs:
   build:
@@ -11,25 +11,33 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          path: 20
-
-      # ... rest of the workflow ...
 
       - name: Install Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11' # Choose the appropriate version
+          python-version: '3.11'
 
-      - name: Upload Package artifacts
+      - name: Install Buildozer
+        run: pip install buildozer
+
+      - name: Build APK
+        run: buildozer android debug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk
+          path: bin/main-debug.apk
+
+      - name: Upload Python artifacts
         uses: actions/upload-artifact@v2
         with:
           name: python-artifacts
-          path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
-          
-      - name: Make package available for download
+          path: main.py
+
+      - name: Upload requirements artifact
         uses: actions/upload-artifact@v2
         with:
-          name: package
-          path: path/to/main.py/utils.py/requirements.txt
+          name: requirements
+          path: requirements.txt
              
