@@ -2,7 +2,7 @@ name: Build Android App
 
 on:
   push:
-    branches:[ first commits ]
+    branches:[ first commit ]
 
 jobs:
   build:
