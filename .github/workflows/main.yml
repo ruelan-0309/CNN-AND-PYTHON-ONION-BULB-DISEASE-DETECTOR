@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          path: 20
 
       # ... rest of the workflow ...
 
@@ -21,17 +19,21 @@ jobs:
         with:
           python-version: '3.11' # Choose the appropriate version
 
-      - name: Upload Package artifacts
+      - name: Upload Python artifacts
         uses: actions/upload-artifact@v2
         with:
           name: python-artifacts
-          path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\main.py.py
-      - name: Upload APK artifact uses: actions/upload-artifact@v2 
+          path: main.py
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v2 
         with: 
-          name: apk path: path/to/C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app\bin\main-debug.apk
+          name: apk
+          path: bin/main-debug.apk
           
       - name: Make package available for download
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: path/to/main.py/utils.py/requirements.txt
+          path: main.py utils.py requirements.txt
+
