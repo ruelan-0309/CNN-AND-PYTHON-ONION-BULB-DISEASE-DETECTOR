@@ -23,12 +23,13 @@ jobs:
 
       - name: Package artifacts
         uses: actions/upload-artifact@v2
-        with: "C:\Users\Ann Margaret Ruelan\Documents\python\onion bulb diseases detector app"
-          name:python-web-app
-          path:|
+        with:
+          name: python-web-app
+          path: |
             app/views.py
             app/__init__.py
             app/templates/
             app/static/
             requirements.txt
             README.md # Optional, if you want to include the README
+
