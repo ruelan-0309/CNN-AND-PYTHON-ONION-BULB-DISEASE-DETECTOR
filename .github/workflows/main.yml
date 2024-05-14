@@ -15,16 +15,24 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build Android App
-        run: |
-          # ... build commands ...
+      # Add steps to build your Android app here
+      # For example:
+      # - name: Set up JDK
+      #   uses: actions/setup-java@v2
+      #   with:
+      #     java-version: '11'
+      # - name: Build with Gradle
+      #   run: ./gradlew build
 
-          # Save build output as artifact
-          echo "Build output saved as build-output.tar.gz"
-          mv path/to/build/output build-output.tar.gz
+      # Add steps to package your Android app
+      # For example:
+      # - name: Package Android App
+      #   run: ./gradlew assembleRelease
 
-      - name: Upload build output directory
+      - name: Upload Build Output
         uses: actions/upload-artifact@v2
         with:
-          name: package
-          path: build-output.tar.gz
+          name: build-output
+          path: path/to/build/output
+Write to RESEARCH GROUP 3
+
