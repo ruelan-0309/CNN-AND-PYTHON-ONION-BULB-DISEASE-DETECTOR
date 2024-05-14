@@ -31,8 +31,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: |
-              main.py
-              utils.py
-              requirements.txt
-          
+          path: path/to/main.py/utils.py/requirements.txt
+             
