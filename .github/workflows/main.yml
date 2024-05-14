@@ -1,0 +1,37 @@
+name: Build Android App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Buildozer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install buildozer
+
+      - name: Prepare Buildozer
+        run: buildozer init
+
+      - name: Update Buildozer Spec
+        run: |
+          echo "requirements = kivy" >> buildozer.spec
+          echo "options = --storage-dir=/tmp/buildozer" >> buildozer.spec
+
+      - name: Build APK
+        run: buildozer android debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: myapp
+          path: myapp/**/*.apk
