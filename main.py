@@ -65,5 +65,5 @@ class DiseaseAlert(App):
 
 
 if __name__ == '__main__':
-    app = DiseaseAlert()
-    app.run()
+    cameraapp = DiseaseAlert()
+    cameraapp.run()
