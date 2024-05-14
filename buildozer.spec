@@ -44,13 +44,12 @@ requirements = python3,kivy,sdl2_ttf,pillow
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = %(source.dir)s/data/icon.png
 
-# (list) Supported orientations
-# Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
+# (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
 
 # (list) List of service to declare
@@ -94,8 +93,7 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-# (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
-#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
+#android.permissions = INTERNET
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
@@ -154,7 +152,7 @@ fullscreen = 0
 #android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
 
 # (str) Full name including package path of the Java class that implements Python Service
-# use that parameter to set custom Java class which extends PythonService
+# use that parameter to set custom Java class instead of PythonService
 #android.service_class_name = org.kivy.android.PythonService
 
 # (str) Android app theme, default is ok for Kivy-based app
@@ -187,18 +185,6 @@ fullscreen = 0
 # 1) android.add_assets = source_asset_relative_path
 # 2) android.add_assets = source_asset_path:destination_asset_relative_path
 #android.add_assets =
-
-# (list) Put these files or directories in the apk res directory.
-# The option may be used in three ways, the value may contain one or zero ':'
-# Some examples:
-# 1) A file to add to resources, legal resource names contain ['a-z','0-9','_']
-# android.add_resources = my_icons/all-inclusive.png:drawable/all_inclusive.png
-# 2) A directory, here  'legal_icons' must contain resources of one kind
-# android.add_resources = legal_icons:drawable
-# 3) A directory, here 'legal_resources' must contain one or more directories, 
-# each of a resource kind:  drawable, xml, etc...
-# android.add_resources = legal_resources
-#android.add_resources =
 
 # (list) Gradle dependencies to add
 #android.gradle_dependencies =
@@ -238,7 +224,7 @@ fullscreen = 0
 # (str) XML file to include as an intent filters in <activity> tag
 #android.manifest.intent_filters =
 
-# (str) screenOrientation to set for the main activity.
+# (str) launchMode to set for the main activity
 #android.manifest.launch_mode = standard
 
 # (list) Android additional libraries to copy into libs/armeabi
@@ -297,7 +283,6 @@ android.allow_backup = True
 # (bool) disables the compilation of py to pyc/pyo files when packaging
 # android.no-compile-pyo = True
 
-
 # (str) The format used to package the app for release mode (aab or apk or aar).
 # android.release_artifact = aab
 
@@ -312,10 +297,10 @@ android.allow_backup = True
 #p4a.url =
 
 # (str) python-for-android fork to use in case if p4a.url is not specified, defaults to upstream (kivy)
-#p4a.fork = kivy
+p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = develope
+p4a.branch = develop
 
 # (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
 #p4a.commit = HEAD
@@ -344,7 +329,6 @@ android.allow_backup = True
 
 # (str) extra command line arguments to pass when invoking pythonforandroid.toolchain
 #p4a.extra_args =
-
 
 
 #
