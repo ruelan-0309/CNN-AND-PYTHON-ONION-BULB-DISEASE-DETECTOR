@@ -4,7 +4,7 @@
 title = Disease Alert
 
 # (str) Package name
-package.name = disease_alert
+package.name = diseasealertapk
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.novfensec
